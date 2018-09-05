@@ -4,3 +4,15 @@ Authore: Brandon
 Description: A theme built with Bootstrap CSS
 Text Domain: bootstrap-wordpress
 */
+
+/* Widget area */
+.bs-widgets {
+  margin-top: 6rem;
+}
+/* Single widget */
+.bs-widget {
+  margin-bottom: 3rem;
+}
+/* Single post snippet, home page */
+.bs-post-snippet {
+}
