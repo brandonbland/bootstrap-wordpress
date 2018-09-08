@@ -1,15 +1,26 @@
 <?php get_header(); ?>
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
+  <!-- Post snippet -->
+  <div class="bs-post-snippet">
+    <?php if (has_post_thumbnail()) : ?>
+      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium-large', ['class' => 'img-fluid mb-2']); ?></a>
+    <?php endif; ?>
+    <h2><a href="<?php the_permalink(); ?>"><?php __(the_title()); ?></a></h2>
+    <p>
+      <small class="text-muted">
+        <?php the_date(); ?>, by 
+        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
+      </small>
+    </p>
+    <?php the_excerpt(); ?> 
+    <hr>
+  </div>
+<?php endwhile; ?>
+<?php else: ?>
+    <?php __('There are no posts.'); ?>
 
 
 
-            <!-- Post snippet -->
-            <div class="bs-post-snippet">
-              <h2><a href="#">Blog Post Title</a></h2>
-              <p><small>By <a href="#">Author</a>, Dec 25, 2007</small></p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quas aliquam recusandae minima quisquam qui vero perferendis consequatur cumque libero quis ut magni, est, dolor inventore quos, incidunt repellendus voluptate, error exercitationem atque quidem ea possimus officia! Harum iusto, ipsa.
-                <a href="#">&nbsp;...Read More</a>
-              </p>
-            </div>
-
+<?php endif; ?>
 <?php get_footer(); ?>
