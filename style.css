@@ -5,14 +5,32 @@ Description: A theme built with Bootstrap CSS
 Text Domain: bootstrap-wordpress
 */
 
+body {
+}
+
+footer {
+  color: white;
+  background-color: grey;
+  
+}
 /* Widget area */
 .bs-widgets {
-  margin-top: 6rem;
 }
 /* Single widget */
 .bs-widget {
-  margin-bottom: 3rem;
+  /* margin-bottom: 2rem; */
 }
 /* Single post snippet, home page */
 .bs-post-snippet {
 }
+
+/* Footer widget */
+.bs-footer-widget {
+  
+}
+/* Pagination  */
+.bs-pagination {
+  margin-bottom: 6rem;
+}
+
+

@@ -1,35 +1,78 @@
         </div>
 
           <!-- Sidebar widgets -->
-          <div class="col-md-3 offset-md-1 bs-widgets">
-
-            <div class="bs-widget">
-              <h3>Description</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, veritatis autem, aspernatur sed excepturi consectetur dolorum ipsam nisi quis explicabo sunt quod perspiciatis pariatur quam nostrum. Est deserunt, unde quod!</p>
-            </div>
-
-            <div class="bs-widget">
-              <h3>Recent Posts</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-                <li><a href="#">Repellendus, mollitia reiciendis fuga id.</a></li>
-                <li><a href="#">Sapiente excepturi voluptatum ex odio.</a></li>
-                <li><a href="#">Corporis, commodi, similique! Reprehenderit, modi.</a></li>
-                <li><a href="#">Earum facere voluptatem quo odit?</a></li>
-              </ul>
-            </div>
+          <div class="col-md-4 bs-widgets">
+            <?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
+            	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+            		<?php dynamic_sidebar( 'right-sidebar' ); ?>
+            	</div><!-- #primary-sidebar -->
+            <?php endif; ?>
           </div>
         </div>
 
-        <hr>
 
       </div> <!-- /container -->
 
     </main>
-
-    <footer class="container">
-      <p>&copy; <?php echo Date('Y'); ?> - <?php bloginfo('title'); ?></p>
-    </footer>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+    
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+    
+          <!-- Grid row -->
+          <div class="row">
+    
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+    
+              <!-- Content -->
+              <?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+              		<?php dynamic_sidebar( 'footer-left' ); ?>
+              <?php endif; ?>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none pb-3">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+              
+              <!-- Content -->
+              <?php if ( is_active_sidebar( 'footer-middle' ) ) : ?>
+              		<?php dynamic_sidebar( 'footer-middle' ); ?>
+              <?php endif; ?>
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+    
+                <!-- Content -->
+                <?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+                		<?php dynamic_sidebar( 'footer-right' ); ?>
+                <?php endif; ?>
+                
+              </div>
+              <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+          <p>&copy; <?php echo Date('Y'); ?> - <?php bloginfo('title'); ?></p>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+      <!-- Footer -->    <!-- <footer class="container-fluid">
+    </footer> -->
 
     <?php wp_footer(); ?>
 

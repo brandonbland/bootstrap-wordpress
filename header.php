@@ -46,8 +46,12 @@
 
       <div class="container">
         <div class="row">
-
-          <!-- Content area -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <h1 class="display-4 mt-3"><?php bloginfo('title'); ?></h1>
             <hr>
+          </div>
+        </div>
+        <div class="row">
+
+          <!-- Content area -->
+          <div class="col-md-6  offset-md-1">

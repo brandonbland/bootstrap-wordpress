@@ -1,27 +1,30 @@
+ 
 <?php get_header(); ?>
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
   <!-- Post snippet -->
   <div class="bs-post-snippet">
     <?php if (has_post_thumbnail()) : ?>
-      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium-large', ['class' => 'img-fluid mb-2']); ?></a>
+      <?php the_post_thumbnail('medium-large', ['class' => 'img-fluid mb-2']); ?>
     <?php endif; ?>
-    <h2><a href="<?php the_permalink(); ?>"><?php __(the_title()); ?></a></h2>
+    <h2><?php __(the_title()); ?></h2>
     <p>
       <small class="text-muted">
         <?php the_date(); ?>, by 
         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
       </small>
     </p>
-    <?php the_excerpt(); ?> 
-    <hr>
+    <?php the_content(); ?> 
+  </div>
+  
+  <!-- Comments -->
+  <div class="bs-comments">
   </div>
 <?php endwhile; ?>
 
-<!-- Pagination -->
 <div class="bs-pagination">
-  <span class="float-right"><?php next_posts_link('Older posts'); ?></span>  
-  <span class="float-left"><?php previous_posts_link('Newer posts.'); ?></span>
+  <span class="float-right"><?php echo next_post_link('%link'); ?></span><br><br>
+  <span class="float-left"><?php echo previous_post_link('%link'); ?></span><br>
 </div>
 
 <?php else: ?>
