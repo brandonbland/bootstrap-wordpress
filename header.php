@@ -21,9 +21,9 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
       <a class="navbar-brand" href="<?php echo esc_url(site_url()); ?>"><?php bloginfo('title'); ?></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -45,13 +45,8 @@
     <main role="main">
 
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="display-4 mt-3"><?php bloginfo('title'); ?></h1>
-            <hr>
-          </div>
-        </div>
+        <?php if ( is_active_sidebar( 'above-content' ) ) : ?>
+            <?php dynamic_sidebar( 'above-content' ); ?>
+        <?php endif; ?>
         <div class="row">
 
-          <!-- Content area -->
-          <div class="col-md-6  offset-md-1">

@@ -1,9 +1,12 @@
- 
-<?php get_header(); ?>
+ <?php get_header(); ?>
+
+ <!-- Content area -->
+ <div class="col-md-8">
+
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
-  <!-- Post snippet -->
-  <div class="bs-post-snippet">
+  <!-- Post content -->
+  <div class="bs-post">
     <?php if (has_post_thumbnail()) : ?>
       <?php the_post_thumbnail('medium-large', ['class' => 'img-fluid mb-2']); ?>
     <?php endif; ?>
@@ -14,7 +17,18 @@
         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
       </small>
     </p>
-    <?php the_content(); ?> 
+    <!-- Above post widget -->
+    <?php if ( is_active_sidebar( 'above-post' ) ) : ?>
+        <?php dynamic_sidebar( 'above-post' ); ?>
+    <?php endif; ?>
+    
+    <!-- Post content  -->
+    <?php __(the_content()); ?> 
+    
+    <!-- Below post widget -->
+    <?php if ( is_active_sidebar( 'below-post' ) ) : ?>
+        <?php dynamic_sidebar( 'below-post' ); ?>
+    <?php endif; ?>
   </div>
   
   <!-- Comments -->
@@ -29,8 +43,23 @@
 
 <?php else: ?>
     <?php __('There are no posts.'); ?>
-
-
-
 <?php endif; ?>
+
+</div>
+
+  <!-- Sidebar widgets -->
+  <div class="col-md-4 bs-widgets">
+    <?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
+      <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+        <?php dynamic_sidebar( 'right-sidebar' ); ?>
+      </div><!-- #primary-sidebar -->
+    <?php endif; ?>
+  </div>
+</div>
+
+
+</div> <!-- /container -->
+
+</main>
+
 <?php get_footer(); ?>

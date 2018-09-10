@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+
+<!-- Content area -->
+<div class="col-md-8">
+
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
   <!-- Post snippet -->
@@ -13,7 +17,7 @@
         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
       </small>
     </p>
-    <?php the_excerpt(); ?> 
+    <?php __(the_excerpt()); ?> 
     <hr>
   </div>
 <?php endwhile; ?>
@@ -30,4 +34,22 @@
 
 
 <?php endif; ?>
+
+</div>
+
+  <!-- Sidebar widgets -->
+  <div class="col-md-4 bs-widgets">
+    <?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
+      <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+        <?php dynamic_sidebar( 'right-sidebar' ); ?>
+      </div><!-- #primary-sidebar -->
+    <?php endif; ?>
+  </div>
+</div>
+
+
+</div> <!-- /container -->
+
+</main>
+
 <?php get_footer(); ?>

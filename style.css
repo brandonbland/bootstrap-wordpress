@@ -1,36 +1,81 @@
 /*
 Theme Name: Bootstrap Wordpress
-Authore: Brandon
+Author: Brandon
 Description: A theme built with Bootstrap CSS
 Text Domain: bootstrap-wordpress
 */
 
+html {
+  min-height: 90vh;
+}
+
 body {
+  min-height: 90vh;
+}
+
+/* Main wrapper */
+main {
+  min-height: 60vh;
 }
 
 footer {
   color: white;
   background-color: grey;
+}
+
+/* Widget area, sidebar */
+.bs-widgets {
+  margin-top: 2rem;
+}
+
+/* Single widget, sidebar */
+.bs-widget {
+
+}
+
+/* Above content, below navbar */
+.bs-above-content {
   
 }
-/* Widget area */
-.bs-widgets {
+
+/* Above post content, below title */
+.bs-above-post {
+  
 }
-/* Single widget */
-.bs-widget {
-  /* margin-bottom: 2rem; */
-}
-/* Single post snippet, home page */
-.bs-post-snippet {
+
+/* After post content, before comments */
+.bs-below-post {
+  
 }
 
 /* Footer widget */
 .bs-footer-widget {
+
+}
+
+.bs-footer-widget a {
+  color: white;
+  text-decoration: underline;
+}
+
+.bs-footer-widget a:hover {
+  color: lightgrey;
+}
+
+/* Single post snippet, home page */
+.bs-post-snippet {
+}
+
+/* Content */
+.bs-post {
   
 }
+
 /* Pagination  */
 .bs-pagination {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
+
+
 
 

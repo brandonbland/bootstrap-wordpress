@@ -35,6 +35,35 @@ add_filter('excerpt_length', 'set_excerpt_length', 999);
  // Register our sidebars and widgetized areas.
 function arphabet_widgets_init() {
 
+	// Above content, below navbar
+	register_sidebar( array(
+		'name'          => 'Above Content',
+		'id'            => 'above-content',
+		'before_widget' => '<div class="bs-above-content">',
+		'after_widget'  => '</div>',
+		'description'   => __('Above content, below navbar', 'above-content'),
+	) );
+	
+	// Above post content, under title
+	register_sidebar( array(
+		'name'          => 'Above Post',
+		'id'            => 'above-post',
+		'before_widget' => '<div class="bs-above-post">',
+		'after_widget'  => '</div>',
+		'description'   => __('Above post content, under title.', 'above-post'),
+	) );
+
+	// Below post content, before comments
+	register_sidebar( array(
+		'name'          => 'Below Post',
+		'id'            => 'below-post',
+		'before_widget' => '<div class="bs-below-post">',
+		'after_widget'  => '</div>',
+		'description'   => __('Below post content, before comments.', 'below-post'),
+	) );
+
+	
+	// Sidebar, to right of content
 	register_sidebar( array(
 		'name'          => 'Right sidebar',
 		'id'            => 'right-sidebar',

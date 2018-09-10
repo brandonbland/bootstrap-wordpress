@@ -1,19 +1,3 @@
-        </div>
-
-          <!-- Sidebar widgets -->
-          <div class="col-md-4 bs-widgets">
-            <?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
-            	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-            		<?php dynamic_sidebar( 'right-sidebar' ); ?>
-            	</div><!-- #primary-sidebar -->
-            <?php endif; ?>
-          </div>
-        </div>
-
-
-      </div> <!-- /container -->
-
-    </main>
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4">
     
@@ -65,7 +49,7 @@
         <!-- Footer Links -->
     
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
+        <div class="footer-copyright text-center pt-3 pb-1">
           <p>&copy; <?php echo Date('Y'); ?> - <?php bloginfo('title'); ?></p>
         </div>
         <!-- Copyright -->
