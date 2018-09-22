@@ -5,17 +5,19 @@ Description: A theme built with Bootstrap CSS
 Text Domain: bootstrap-wordpress
 */
 
+@import url('css/bootstrap.min.css');
+
 html {
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 body {
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 /* Main wrapper */
 main {
-  min-height: 60vh;
+  min-height: 100vh;
 }
 
 footer {
@@ -25,27 +27,28 @@ footer {
 
 /* Widget area, sidebar */
 .bs-widgets {
-  margin-top: 2rem;
+  line-height: 1.5rem;
+	font-size: 85%;
 }
 
 /* Single widget, sidebar */
 .bs-widget {
-
+  margin-bottom: 2rem;
 }
 
 /* Above content, below navbar */
 .bs-above-content {
-  
+
 }
 
 /* Above post content, below title */
 .bs-above-post {
-  
+
 }
 
 /* After post content, before comments */
 .bs-below-post {
-  
+
 }
 
 /* Footer widget */
@@ -68,7 +71,7 @@ footer {
 
 /* Content */
 .bs-post {
-  
+
 }
 
 /* Pagination  */
@@ -77,5 +80,33 @@ footer {
 }
 
 
+main a {
+	color: #2b6dad;
 
+}
+main a:hover {
+	color: #2b6dad;
+	text-decoration: underline;
+}
 
+.wp-caption-text {
+	font-size: 80%;
+}
+
+.mejs-container {
+	margin-bottom: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+main h2 {
+
+}
+
+main h3 {
+	font-size: 1.8rem;
+
+}
+
+main h2, h3 {
+	margin-bottom: 1.3rem;
+}

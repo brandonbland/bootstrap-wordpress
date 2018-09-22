@@ -9,9 +9,6 @@
       <?php is_front_page() ? bloginfo('description') : wp_title(); ?>
     </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
 
@@ -41,7 +38,7 @@
       		?>
     </nav>
 
-    
+
     <main role="main">
 
       <div class="container">
@@ -49,4 +46,3 @@
             <?php dynamic_sidebar( 'above-content' ); ?>
         <?php endif; ?>
         <div class="row">
-
