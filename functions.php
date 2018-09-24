@@ -18,7 +18,7 @@ register_nav_menus( array(
 ));
 
 function bs_theme_setup() {
-  // Add featured image support 
+  // Add featured image support
   add_theme_support('post-thumbnails');
 }
 
@@ -43,7 +43,7 @@ function arphabet_widgets_init() {
 		'after_widget'  => '</div>',
 		'description'   => __('Above content, below navbar', 'above-content'),
 	) );
-	
+
 	// Above post content, under title
 	register_sidebar( array(
 		'name'          => 'Above Post',
@@ -62,7 +62,7 @@ function arphabet_widgets_init() {
 		'description'   => __('Below post content, before comments.', 'below-post'),
 	) );
 
-	
+
 	// Sidebar, to right of content
 	register_sidebar( array(
 		'name'          => 'Right sidebar',
@@ -73,7 +73,7 @@ function arphabet_widgets_init() {
 		'after_title'   => '</h3>',
 		'description'   => __('Right sidebar', 'right-sidebar'),
 	) );
-	
+
 	// Footer left widget area
 	register_sidebar( array(
 		'name'        => 'Footer Left',
@@ -84,7 +84,7 @@ function arphabet_widgets_init() {
 		'after_title'   => '</h5>',
 		'description' => __( 'Left half of footer', 'footer-left' ),
 	) );
-	
+
 	// Footer middle widget area
 	register_sidebar( array(
 		'name'        => 'Footer Middle',
@@ -95,7 +95,7 @@ function arphabet_widgets_init() {
 		'after_title'   => '</h5>',
 		'description' => __( 'Footer area, middle/right side, 1/4 of footer', 'footer-middle' ),
 	) );
-	
+
 	// Footer middle widget area
 	register_sidebar( array(
 		'name'        => 'Footer Right',
@@ -106,7 +106,7 @@ function arphabet_widgets_init() {
 		'after_title'   => '</h5>',
 		'description' => __( 'Footer area, far right side, 1/4 of footer', 'footer-right' ),
 	) );
-	
+
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
@@ -128,3 +128,10 @@ function post_link_attributes($output) {
 add_filter('next_post_link', 'post_link_attributes');
 add_filter('previous_post_link', 'post_link_attributes');
 
+
+// Code requested to be added for comment Walker
+// https://github.com/bourafai/wp-bootstrap-4-comment-walker
+function custom_theme_setup() {
+    add_theme_support( 'html5', array( 'comment-list' ) );
+}
+add_action( 'after_setup_theme', 'custom_theme_setup' );

@@ -13,7 +13,7 @@
     <h2><?php __(the_title()); ?></h2>
     <p>
       <small class="text-muted">
-        <?php the_date(); ?>, by 
+        <?php the_date(); ?>, by
         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
       </small>
     </p>
@@ -21,18 +21,24 @@
     <?php if ( is_active_sidebar( 'above-post' ) ) : ?>
         <?php dynamic_sidebar( 'above-post' ); ?>
     <?php endif; ?>
-    
+
     <!-- Post content  -->
-    <?php __(the_content()); ?> 
-    
+    <?php __(the_content()); ?>
+
     <!-- Below post widget -->
     <?php if ( is_active_sidebar( 'below-post' ) ) : ?>
         <?php dynamic_sidebar( 'below-post' ); ?>
     <?php endif; ?>
   </div>
-  
+
   <!-- Comments -->
   <div class="bs-comments">
+    <?php
+      // If comments are open or we have at least one comment, load up the comment template.
+       if ( comments_open() || get_comments_number() ) :
+           comments_template();
+       endif;
+    ?>
   </div>
 <?php endwhile; ?>
 
